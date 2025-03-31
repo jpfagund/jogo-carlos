@@ -35,3 +35,7 @@ select, button {
 .tutorial img{
     height: 100px;
 }
+
+h3{
+    text-align: center;
+}
