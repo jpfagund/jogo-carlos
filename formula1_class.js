@@ -35,7 +35,7 @@ class Carro extends Obj{
     }
 
     point(objeto){
-        if((objeto.y>=500)&&(objeto.y <= 504)){
+        if((objeto.y>=500)&&(objeto.y <= 505)){
             return true
         }else{
             false
