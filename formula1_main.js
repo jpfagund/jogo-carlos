@@ -25,9 +25,7 @@ let jogar = true
 
 let keys = {
     a: false,
-    d: false,
-    w: false,
-    s: false
+    d: false
 }
 
 document.addEventListener('keydown', (e) => {
@@ -35,10 +33,6 @@ document.addEventListener('keydown', (e) => {
         keys.a = true;
     } else if (e.key === 'd') {
         keys.d = true;
-    } else if (e.key === 'w') {
-        keys.w = true;
-    } else if (e.key === 's') {
-        keys.s = true;
     }
 })
 document.addEventListener('keyup', (e) => {
@@ -46,10 +40,6 @@ document.addEventListener('keyup', (e) => {
         keys.a = false;
     } else if (e.key === 'd') {
         keys.d = false;
-    } else if (e.key === 'w') {
-        keys.w = false;
-    } else if (e.key === 's') {
-        keys.s = false;
     }
 })
 
@@ -112,10 +102,12 @@ function pontos() {
 function colisao() {
     if (carro.colid(c2)) {
         carro.vida -= 1
+        carro.pts -= 5
         c2.recomeca()
         batida.play()
     } else if (carro.colid(c3)) {
         carro.vida -= 1
+        carro.pts -= 5
         c3.recomeca()
         batida.play()
     }
@@ -170,12 +162,6 @@ function atualiza() {
         }
         if (keys.d) {
             carro.x += 12
-        }
-        if (keys.w) {
-            carro.y -= 12
-        }
-        if (keys.s) {
-            carro.y += 12
         }
 
         carro.mov_carro()
